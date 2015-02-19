@@ -1,0 +1,29 @@
+h1 Listing notes
+
+table
+  thead
+    tr
+      th Active
+      th Name
+      th Code
+      th Sort
+      th Text
+      th
+      th
+      th
+
+  tbody
+    - @notes.each do |note|
+      tr
+        td = note.active
+        td = note.name
+        td = note.code
+        td = note.sort
+        td = note.text
+        td = link_to 'Show', note
+        td = link_to 'Edit', edit_note_path(note)
+        td = link_to 'Destroy', note, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Note', new_note_path

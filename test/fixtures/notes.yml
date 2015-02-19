@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  active: false
+  name: MyString
+  code: MyString
+  sort: 1
+  text: MyText
+
+two:
+  active: false
+  name: MyString
+  code: MyString
+  sort: 1
+  text: MyText

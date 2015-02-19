@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  active: false
+  sort: 1
+  name: MyString
+  code: MyString
+
+two:
+  active: false
+  sort: 1
+  name: MyString
+  code: MyString

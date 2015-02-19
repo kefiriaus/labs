@@ -1,0 +1,9 @@
+.nested-fields
+  //= f.fields_for :tag do |tag|
+  = f.input :id, collection: Tag.order(:sort), value_method: :id
+  //= tag.association :tag, collection: Tag.order(:name), prompt: 'Choose an existing tag'
+  //= link_to_add_association 'or create a new tag', f, :tag
+  = link_to_remove_association "remove tag", f
+
+//.nested-fields
+  = f.input :name, :hint => 'how should it be tagged'

@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Active:
+  = @tag.active
+p
+  strong Sort:
+  = @tag.sort
+p
+  strong Name:
+  = @tag.name
+p
+  strong Code:
+  = @tag.code
+
+= link_to 'Edit', edit_tag_path(@tag)
+'|
+= link_to 'Back', tags_path

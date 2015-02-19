@@ -1,0 +1,16 @@
+h1 PostgreSQL
+
+h3 Connection
+code bash$ sudo -u postgres psql
+
+h3 Create role
+code 
+	|postgres=# CREATE ROLE rails WITH CREATEDB LOGIN PASSWORD 'password';
+
+h3 List database
+code 
+	|postgres=# \l
+
+h3 Quite
+code 
+	|postgres=# \q

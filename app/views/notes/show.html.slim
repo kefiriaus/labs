@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Active:
+  = @note.active
+p
+  strong Name:
+  = @note.name
+p
+  strong Code:
+  = @note.code
+p
+  strong Sort:
+  = @note.sort
+p
+  strong Text:
+  = markdown(@note.text)
+
+= link_to 'Edit', edit_note_path(@note)
+'|
+= link_to 'Back', notes_path
