@@ -51,3 +51,7 @@ jQuery ->
     '\n'+heading
 
   $('#post_content').markItUp(markdownSettings)
+
+  $('#note_name').on "keyup", (e) ->
+    val = $(this).val().toLowerCase().replace(/\s+|_+/g, "-").replace(/[^a-zA-Z0-9-]+/g, "")
+    $('#note_code').val(val);

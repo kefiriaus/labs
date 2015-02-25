@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :elements
 
+  post 'markdown/preview'
+
   get ':code' => 'notes#taged'
 
   get 'postgresql' => 'postgresql#index'

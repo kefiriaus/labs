@@ -1,8 +1,16 @@
 h1 = @tag.name
 
 - @notes.each do |note|
-  h3 = note.name
+  h2
+    i
+      span.text-primary
+        |#
+        = note.name
+  hr
   = markdown note.text 
+  = link_to "Edit", edit_note_path(note), :class => "btn btn-primary btn-xs"
+  ' &nbsp;
+  = link_to "New one", new_note_path, class: "btn btn-primary btn-xs"
 
 //table
   thead
@@ -27,7 +35,6 @@ h1 = @tag.name
         td = link_to 'Show', note
         td = link_to 'Edit', edit_note_path(note)
         td = link_to 'Destroy', note, data: {:confirm => 'Are you sure?'}, :method => :delete
+//br
 
-br
-
-= link_to 'New Note', new_note_path
+  = link_to 'New Note', new_note_path, class: "btn btn-primary btn-xs"

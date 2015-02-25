@@ -35,6 +35,7 @@ gem "redcarpet"
 #gem 'reverse_markdown'
 #gem 'html2markdown'
 gem 'markitup-rails'
+gem 'rouge' # color code
 
 # Simple form
 gem 'simple_form'

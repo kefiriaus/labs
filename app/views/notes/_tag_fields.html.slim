@@ -1,9 +1,11 @@
-.nested-fields
+.nested-fields.input-group
   //= f.fields_for :tag do |tag|
-  = f.input :id, collection: Tag.order(:sort), value_method: :id
+  .input-group-addon
+    = link_to_remove_association "", f, class: "glyphicon glyphicon-remove" 
+  = f.input_field :id, collection: Tag.order(:sort), value_method: :id, class: "form-control"
   //= tag.association :tag, collection: Tag.order(:name), prompt: 'Choose an existing tag'
   //= link_to_add_association 'or create a new tag', f, :tag
-  = link_to_remove_association "remove tag", f
+  //= link_to_remove_association "remove tag", f
 
 //.nested-fields
   = f.input :name, :hint => 'how should it be tagged'

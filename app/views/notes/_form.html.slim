@@ -6,25 +6,27 @@
         - @note.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :active
-    = f.check_box :active
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :code
-    = f.text_field :code
-  .field
-    = f.label :sort
-    = f.number_field :sort
-  .field
-    = f.label :text
-    = f.text_area :text
-  #tags
-    //= f.simple_fields_for :note_tags do |note_tag|
+  .form-inline
+    .form-group
+      = f.label :active, class: "sr-only"
+      = f.check_box :active, checked: "checked"
+    .form-group
+      = f.label :sort, class: "sr-only"
+      = f.number_field :sort, class: "form-control", placeholder: "Sort"
+    .form-group
+      = f.label :name, class: "sr-only"
+      = f.text_field :name, class: "form-control", placeholder: "Name"
+    .form-group
+      = f.label :code, class: "sr-only"
+      = f.text_field :code, class: "form-control", placeholder: "Code"
+  .form-group
+    = f.label :text, class: "sr-only"
+    = f.text_area :text, class: "form-control", rows: 10, id: "post_content"
+  .form-group
     = f.simple_fields_for :tags do |note_tag|
       = render 'tag_fields', f: note_tag
     .links
-      = link_to_add_association 'add a tag', f, :note_tags
-  .actions = f.submit
+      = link_to_add_association 'add a tag', f, :note_tags, class: "btn btn-link btn-xs"
+  hr
+  .actions
+    = f.button :submit, class: "btn btn-primary"

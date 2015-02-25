@@ -1,29 +1,42 @@
+.btn-group
+  = link_to new_note_path, class: "btn btn-default" do
+    span.glyphicon.glyphicon-plus
+
 h1 Listing notes
 
-table
+table.table
   thead
     tr
+      th #
       th Active
       th Name
       th Code
       th Sort
       th Text
-      th
-      th
-      th
+      //th
+      //th
+      //th
 
   tbody
     - @notes.each do |note|
       tr
+        td
+          .dropdown
+            button.btn.btn-default.dropdown-toggle type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"
+              span.glyphicon.glyphicon-align-justify
+            ul.dropdown-menu role="menu" aria-labelledby="dropdownMenu1"
+              li role="presentation"
+                = link_to 'Show', note, { role: "menuitem", tabindex: "-1"}
+              li role="presentation"
+                = link_to 'Edit', edit_note_path(note), { role: "menuitem", tabindex: "-1"}
+              li role="presentation"
+                = link_to 'Delete', note, data: {:confirm => 'Are you sure?'}, :method => :delete, role: "menuitem", tabindex: "-1"
+
         td = note.active
         td = note.name
         td = note.code
         td = note.sort
-        td = note.text
-        td = link_to 'Show', note
-        td = link_to 'Edit', edit_note_path(note)
-        td = link_to 'Destroy', note, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Note', new_note_path
+        td = markdown note.text
+        //td = link_to 'Show', note
+        //td = link_to 'Edit', edit_note_path(note)
+        //td = link_to 'Destroy', note, data: {:confirm => 'Are you sure?'}, :method => :delete

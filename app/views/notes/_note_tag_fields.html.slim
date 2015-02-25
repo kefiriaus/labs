@@ -1,6 +1,5 @@
-.nested-fields
-  //= f.fields_for :tag do |tag|
-  = f.input :tag_id, collection: Tag.order(:sort), value_method: :id
-    //= tag.association :tag, collection: Tag.order(:name), prompt: 'Choose an existing tag'
-  //= link_to_add_association 'or create a new tag', f, :tag
-  = link_to_remove_association "remove tag", f
+.nested-fields.input-group
+  .input-group-addon
+    = link_to_remove_association "", f, class: "glyphicon glyphicon-remove"
+  = f.input_field :tag_id, collection: Tag.order(:sort), value_method: :id, class: "form-control"
+  //= link_to_remove_association "remove tag", f
